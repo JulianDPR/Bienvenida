@@ -1,7 +1,7 @@
 # Bienvenida Pregrado de Estadística
 ## Centro de estudio Sigma
 ## 
-## 2023-02-21
+## 2023-02-25
 ### Finalidad
 
 - Lograr que el estudiante ingresado a primer semestre de estadística conozca las capacidades que puede desarrollar en el pregrado.
