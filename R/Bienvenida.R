@@ -1,5 +1,6 @@
 library(readr)
-Rmissing <- read_csv("C:/Users/sebas/OneDrive/Escritorio/Bienvenida/R/Rmissing.csv")
+library(zoom)
+Rmissing <- read_csv("Rmissing.csv")
 set.seed(30)
 X<- Rmissing
 X<- as.data.frame(X[,-1])
@@ -10,17 +11,16 @@ for(i in 1:length(ind)){
 }
 hist(X[,1],xlab='',ylab='Frecuencia Relativa', main=' Histograma', freq=F,col='aquamarine3')
 lines(density(X[,1]),lwd=2,lty=2,col='red4')
+zm()
 #####################################################
 library(faraway) 
 library(caret)
 library(ggfortify)
 set.seed(123)
-Y<- fat
+X.<- fat
 head(Y)
 Y<- as.data.frame(cbind(fat$siri,fat$abdom,fat$weight))
 colnames(Y)<- c('Siri','Abdom','Weight')
-model <- lm(Siri~ Abdom+ Weight, data=Y)
-summary(model)
 #representación 3D de la regresión con dos predictoras
 library(scatterplot3d)
 library(plot3D)
@@ -28,12 +28,25 @@ library(plotly)
 library(scatterplot3d)
 library(rgl)
 library(plot3Drgl)
+z<-X.$siri
+y<-X.$chest
+x<-X.$biceps
+scatter3D(x, y, z, phi = 0, bty = "b",
+          pch = 20, cex = 2, ticktype = "detailed",xlab = "Longitud del Bicep (cm)",
+          ylab ="Longitud Pectoral (Cm)", zlab = "% Grasa Corporal")
+#Gráfico dinámico
+plotrgl()
+######## Otra alternativa y su respectiva estimación 
+model <- lm(Siri~ Abdom+ Weight, data=Y)
+summary(model)
 z<-Y$Siri
 y<-Y$Abdom
 x<-Y$Weight
 scatter3D(x, y, z, phi = 0, bty = "b",
           pch = 20, cex = 2, ticktype = "detailed",xlab = "Peso (Kg)",
           ylab ="Longitud Abdomen (Cm)", zlab = "% Grasa Corporal")
+#Gráfico dinámico
+plotrgl()
 #La variable Z es la variable a predecir
 #Creamos un objeto para realizar las predicciones con elmodelo
 objr<-lm(z ~ x+y)
