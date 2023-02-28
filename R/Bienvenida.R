@@ -9,7 +9,8 @@ ind<- c(which(is.na(X)),ind)
 for(i in 1:length(ind)){
   X[ind[i],]<- rnorm(1,mean(X[-ind,1],na.rm=TRUE),sd(X[-ind,1],na.rm=TRUE))
 }
-hist(X[,1],xlab='',ylab='Frecuencia Relativa', main=' Histograma', freq=F,col='aquamarine3')
+hist(X[,1],xlab='',ylab='Frecuencia Relativa', main=' Histograma', freq=F,col='aquamarine3',panel.first=grid())
+abline(v=mean(X[,1]),lty=2,lwd=2)
 lines(density(X[,1]),lwd=2,lty=2,col='red4')
 zm()
 #####################################################
