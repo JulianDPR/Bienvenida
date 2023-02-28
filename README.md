@@ -18,4 +18,4 @@ Una parte de este trabajo se realizará en python y otra en R, con el fin del qu
 
 - Test no parámetricos para encontrar posibles fallos a la hora de extraer una muestra de una población objetivo. Los test usados fue el test de Friedman y el Wilcoxon para examinar la correlación entre las pruebas para un nivel de significancia $\alpha$ y un nuevo nivel de significancia $\alpha '$, el cual se obtiene con: $\alpha ' = \frac{\alpha}{N}$; donde N es el número de individuos de la muestra.
 
-- Exploración de una base de datos de multiples variables, con multiples individuos; los cuales se busca las posibiles relaciones entre variables cualitativas, para modelar de una forma lineal generalizada. 
+- Exploración de una base de datos de multiples variables, con multiples individuos; en la cual se busca las posibiles relaciones entre variables cualitativas, para modelar de una forma lineal generalizada. 
